@@ -146,11 +146,17 @@ h1 {
   text-shadow: 0 0 22px rgba(137, 220, 232, 0.58), 0 0 48px rgba(214, 182, 107, 0.22);
 }
 
-.controls {
+.controls,
+.sound-controls {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+}
+
+.sound-controls {
+  align-items: center;
+  margin-top: 12px;
 }
 
 button {
@@ -163,7 +169,8 @@ button {
   font-weight: 700;
 }
 
-button:focus-visible {
+button:focus-visible,
+input:focus-visible {
   outline: 3px solid var(--cyan-glow);
   outline-offset: 3px;
 }
@@ -174,10 +181,35 @@ button:focus-visible {
   box-shadow: 0 0 22px rgba(214, 182, 107, 0.22);
 }
 
-.ghost-button {
+.ghost-button,
+.icon-button,
+.volume-control {
   color: var(--text-main);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.06);
+}
+
+.icon-button {
+  min-width: 98px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.volume-control span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.volume-control input {
+  width: min(34vw, 190px);
+  accent-color: var(--gold);
 }
 
 .message {
@@ -253,7 +285,12 @@ button:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  button {
+  button,
+  .volume-control {
+    width: 100%;
+  }
+
+  .volume-control input {
     width: 100%;
   }
 }

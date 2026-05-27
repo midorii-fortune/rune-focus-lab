@@ -36,6 +36,16 @@
         <button id="retryButton" class="ghost-button" type="button" hidden>リトライ</button>
       </section>
 
+      <section class="sound-controls" aria-label="音設定">
+        <button id="soundButton" class="icon-button" type="button" aria-pressed="true" title="音をオン/オフ">
+          音ON
+        </button>
+        <label class="volume-control" for="volumeSlider">
+          <span>音量</span>
+          <input id="volumeSlider" type="range" min="0" max="100" value="45">
+        </label>
+      </section>
+
       <p id="message" class="message" aria-live="polite">
         スタートを押すと、ルーン探索が始まります。
       </p>
@@ -45,6 +55,15 @@
       </section>
     </section>
   </main>
+
+  <!--
+    音声ファイルは audio フォルダにまとめています。
+    JavaScript側でユーザー操作後に再生するため、スマホブラウザの自動再生制限にも対応しやすい構成です。
+  -->
+  <audio id="bgmAudio" src="audio/bgm.mp3" preload="auto" loop></audio>
+  <audio id="correctAudio" src="audio/correct.mp3" preload="auto"></audio>
+  <audio id="clearAudio" src="audio/clear.mp3" preload="auto"></audio>
+  <audio id="wrongAudio" src="audio/wrong.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>

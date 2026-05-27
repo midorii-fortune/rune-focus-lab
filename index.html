@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rune Focus Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-panel" aria-labelledby="game-title">
+      <header class="game-header">
+        <p class="eyebrow">Elder Futhark Visual Cognition Game</p>
+        <h1 id="game-title">Rune Focus Lab</h1>
+      </header>
+
+      <section class="status-board" aria-label="ゲーム状況">
+        <div class="status-item">
+          <span class="status-label">時間</span>
+          <span id="timer" class="status-value">00:00.00</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">進行</span>
+          <span id="progress" class="status-value">0 / 24</span>
+        </div>
+      </section>
+
+      <section class="target-area" aria-label="探すルーン">
+        <p class="target-label">探すルーン</p>
+        <div id="targetRune" class="target-rune" aria-live="polite">ᚠ</div>
+        <p id="targetName" class="target-name">Fehu</p>
+      </section>
+
+      <section class="controls" aria-label="ゲーム操作">
+        <button id="startButton" class="primary-button" type="button">スタート</button>
+        <button id="retryButton" class="ghost-button" type="button" hidden>リトライ</button>
+      </section>
+
+      <p id="message" class="message" aria-live="polite">
+        スタートを押すと、ルーン探索が始まります。
+      </p>
+
+      <section class="rune-field" aria-label="ルーン一覧">
+        <div id="runeGrid" class="rune-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
